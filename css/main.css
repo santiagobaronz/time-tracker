@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    background-color: #0d1323;
+    overflow: hidden;
+}
+
+#app{
+    padding: 40px;
+}
+
+#tracker-box{
+    padding: 130px;
+}
+
+#authentication-box{
+    background-color: #5746ea;
+    border-radius: 15px;
+    color: #fff;
+    margin: auto;
+    max-width: 500px;
+    padding: 40px;
+    text-align: center;
+    width: 70%;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+}
+
+.changePage{
+    filter: blur(5px);
+    transition: 0.1s all;
+}
+
+#authentication-box h1{
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+#authentication-box button{
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 20px 0;
+    cursor: pointer;
+}
+
+#google-icon{
+    margin-right: 5px;
+}
+
+#authentication-box a{
+    color: #fff;
+    
+}
+
+#authentication-box a:hover{
+    text-decoration: underline;
+}
+
+.profile-options{
+    padding: 20px;
+}
+
+#button-logout{
+    width: 100%;
+    height: 40px;
+    border-radius: 15px;
+    background-color: #fc3159dd;
+    color: #fff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.hidden{
+    display: none;
+}
+
+/* Bichos */
+
+.main-content{
+    display: grid; 
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    height: 100%;
+ }
+
+ #profile-box, #box-1, #box-2 ,#box-3 ,#box-4 ,#box-5 ,#box-6{
+    border-radius: 15px;
+    background-color: #1d204b;
+    position: relative;
+ }
+   
+ #profile-box {
+ 
+    grid-row-start: 1;
+    grid-column-start: 1;
+ 
+    grid-row-end: 3;
+    grid-column-end: 2;
+    
+ }
+
+ .profile-info{
+    background-color:  #5746ea;
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 40px 40px 80px 40px;
+ }
+
+ .profile-info p{
+    color: hsl(236, 100%, 87%);
+    font-size: 18px;
+    margin-bottom: 20px;
+ }
+
+ .profile-info h2{
+    color: #fff;
+    font-weight: 400;
+    font-size: 45px;
+    min-height: 106px;
+ }
+
+ .profile-info img{
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-bottom: 30px;
+ }
+
+ .profile-options ul{
+    margin-bottom: 30px;
+ }
+
+ .profile-options ul li{
+    margin: 0px 40px 20px 30px;
+    list-style-type: none;
+    position: relative;
+    width: 3px;
+    margin: 0 40px;
+    padding-top: 25px;
+    background: hsla(236, 100%, 87%, 0.423);
+ }
+
+ .profile-options ul a{
+    color: hsl(236, 100%, 87%);
+    margin-left: 30px;
+ }
+
+ .profile-options ul li::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: hsl(236, 100%, 87%);
+  }
+
+ #box-1 {
+ 
+    background-color: #ff8b64;
+    grid-row-start: 1;
+    grid-column-start: 2;
+    grid-row-end: 2;
+    grid-column-end: 3;
+    
+
+ }
+ #box-2 {
+    background-color: #4bd081;
+    grid-row-start: 2;
+    grid-column-start: 2;
+    grid-row-end: 3;
+    grid-column-end: 3;
+    
+ }
+ #box-3 {
+    background-color: #56c2e6;
+    grid-row-start: 1;
+    grid-column-start: 3;
+    grid-row-end: 2;
+    grid-column-end: 4;
+    
+ }
+ #box-4 {
+    background-color: #7334d1;
+    grid-row-start: 2;
+    grid-column-start: 3;
+    grid-row-end: 3;
+    grid-column-end: 4;
+    
+ }
+ #box-5 {
+    background-color: #ff5e7d;
+    grid-row-start: 1;
+    grid-column-start: 4;
+    grid-row-end: 2;
+    grid-column-end: 5;
+    
+ }
+ #box-6 {
+    background-color: #f1c75b;
+    grid-row-start: 2;
+    grid-column-start: 4;
+    grid-row-end: 3;
+    grid-column-end: 5;
+    
+ }
+
+ .box-info{
+    background-color: #1d204b;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    border-radius: 15px;
+    color: #fff;
+    padding: 40px;
+ }
+
+ .box-info h3{
+    font-weight: 500;
+    font-size: 23px;
+    margin-bottom: 20px;
+ }
+
+.time{
+    font-weight: 300;
+    font-size: 75px;
+    margin-bottom: 20px;
+ }
+
+ .report-last-week{
+    color: hsl(236, 100%, 87%);
+ }

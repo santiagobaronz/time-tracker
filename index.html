@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Tracker - Firebase</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div id="app">
+        <div id="authentication-box">
+            <h1>Time Tracker</h1>
+            <p>Inicia sesión con Google para acceder a tu perfil y obtener
+                metricas referentes a tus tiempos.
+            </p>
+            <button id="button-login"><img src="https://cdn-icons-png.flaticon.com/512/2702/2702602.png" width="15" id="google-icon"> Iniciar sesión con Google</button>
+            <a href="#">Soy administrador</a>
+        </div>
+        <div id="tracker-box" class="hidden">
+            <div class="main-content">
+                <div id="profile-box">
+                    <div class="profile-info">
+                        <img  id="profile-img">
+                        <p >Reporte de</p>
+                        <h2 id="profile-name"></h2>
+                    </div>
+                    <div class="profile-options">
+                        <ul>
+                            <li><a href="#">Diario</a></li>
+                            <li><a href="#">Semanal</a></li>
+                            <li><a href="#">Mensual</a></li>
+                        </ul>
+                        <button id="button-logout">Cerrar sesión</button>
+                    </div>
+                </div>
+                <div id="box-1">
+                    <div class="box-info">
+                        <h3 class="type">Trabajo</h3>
+                        <p class="time" id="workCard"></p>
+                        <p class="report-last-week" id="workCardSecondary"></p>
+                    </div>
+                </div>
+                <div id="box-2">
+                    <div class="box-info">
+                        <h3 class="type">Ejercicio</h3>
+                        <p class="time" id="exerciseCard"></p>
+                        <p class="report-last-week" id="exerciseCardSecondary"></p>
+                    </div>
+                </div>
+                <div id="box-3">
+                    <div class="box-info">
+                        <h3 class="type">Entretenimiento</h3>
+                        <p class="time" id="playCard"></p>
+                        <p class="report-last-week" id="playCardSecondary"></p>
+                    </div>
+                </div>
+                <div id="box-4">
+                    <div class="box-info">
+                        <h3 class="type">Social</h3>
+                        <p class="time" id="socialCard"></p>
+                        <p class="report-last-week" id="socialCardSecondary"></p>
+                    </div>
+                </div>
+                <div id="box-5">
+                    <div class="box-info">
+                        <h3 class="type">Estudio</h3>
+                        <p class="time" id="studyCard"></p>
+                        <p class="report-last-week" id="studyCardSecondary"></p>
+                    </div>
+                </div>
+                <div id="box-6">
+                    <div class="box-info">
+                        <h3 class="type">Cuidado personal</h3>
+                        <p class="time" id="selfCareCard"></p>
+                        <p class="report-last-week" id="selfCareCardSecondary"></p>
+                    </div>
+                </div>
+              </div>
+            
+        </div>
+    </div>
+
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>
