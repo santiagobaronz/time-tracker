@@ -4,7 +4,7 @@ Application used to display time information of a user. Firebase is used as the 
 
 ## Preview project 📸
 
-![](https://i.imgur.com/TjMJxnD.png)
+![](https://i.imgur.com/su5YJ1i.png)
 
 ## Installation 💻💡
 
