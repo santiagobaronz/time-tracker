@@ -31,6 +31,7 @@ const infoCardSelfCareSeconday = document.querySelector("#selfCareCardSecondary"
 
 /* Declaring a variable called currentUser. */
 let currentUser;
+button.disabled = true;
 
 /* A function that is checking if the user is logged in or not. If the user is logged in, it will add a
 class to the authPage element, it will assign the currentUser variable to the user, and it will call
@@ -40,8 +41,10 @@ onAuthStateChanged(auth, (user) => {
         authPage.classList.add("changePage");
         currentUser = user;
         init(user);
+        button.disabled = true;
     }else{
         mainContent();
+        button.disabled = false;
     }
 })
 
