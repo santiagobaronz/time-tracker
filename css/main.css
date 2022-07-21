@@ -87,6 +87,12 @@ body{
     font-size: 15px;
 }
 
+#button-logout:hover{
+   background-color: #ff0033dd;
+   transition: 0.3s all;
+}
+
+
 .hidden{
     display: none;
 }
@@ -163,6 +169,14 @@ body{
     margin-left: 30px;
  }
 
+ .profile-options ul a:hover{
+   color: #fff;
+}
+
+ .active{
+   color: #fff !important;
+ }
+
  .profile-options ul li::after {
     content: '';
     position: absolute;
@@ -175,48 +189,90 @@ body{
     background: hsl(236, 100%, 87%);
   }
 
+  #box-1::after, #box-2::after ,#box-3::after ,#box-4::after ,#box-5::after ,#box-6::after{
+   background-repeat: round;
+   content: '';
+   position: absolute;
+   display: block;
+   width: 80px;
+   height: 80px;
+   right: 30px;
+   z-index: 1;
+  }
+
+#box-1::after{
+   background-image: url('../assets/icon-work.svg');
+}
+
  #box-1 {
- 
+    position: relative;
     background-color: #ff8b64;
     grid-row-start: 1;
     grid-column-start: 2;
     grid-row-end: 2;
     grid-column-end: 3;
-    
-
  }
+
+ #box-2::after{
+   background-image: url('../assets/icon-exercise.svg');
+   width: 80px;
+   height: 60px;
+   top: 10px;
+   transform: rotate(-30deg);
+}
+
  #box-2 {
     background-color: #4bd081;
     grid-row-start: 2;
     grid-column-start: 2;
     grid-row-end: 3;
     grid-column-end: 3;
-    
  }
+
+ #box-3::after{
+   background-image: url('../assets/icon-play.svg');
+}
+
  #box-3 {
     background-color: #56c2e6;
     grid-row-start: 1;
     grid-column-start: 3;
     grid-row-end: 2;
     grid-column-end: 4;
-    
+
  }
+
+ #box-4::after{
+   background-image: url('../assets/icon-social.svg');
+   width: 80px;
+   height: 90px;
+   top: 5px;
+}
+
  #box-4 {
     background-color: #7334d1;
     grid-row-start: 2;
     grid-column-start: 3;
     grid-row-end: 3;
-    grid-column-end: 4;
-    
+    grid-column-end: 4; 
  }
+
+ #box-5::after{
+   background-image: url('../assets/icon-study.svg');
+}
+
  #box-5 {
     background-color: #ff5e7d;
     grid-row-start: 1;
     grid-column-start: 4;
     grid-row-end: 2;
     grid-column-end: 5;
-    
  }
+
+ #box-6::after{
+   background-image: url('../assets/icon-self-care.svg');
+}
+
  #box-6 {
     background-color: #f1c75b;
     grid-row-start: 2;
@@ -226,18 +282,33 @@ body{
     
  }
 
+ .box-info::after{
+   background-image: url('../assets/menu.svg');
+   background-repeat: no-repeat;
+   background-position: 0px;
+   content: '';
+   position: absolute;
+   display: block;
+   width: 15px;
+   height: 15px;
+   right: 34px;
+   top: 2.2rem;
+   cursor: pointer;
+   padding: 10px;
+   filter: brightness(0.9);
+ }
+
  .box-info{
     background-color: #1d204b;
-    width: 10px;
-    height: 10px;
     position: absolute;
     bottom: -1px;
     left: 0;
     width: 100%;
-    height: 80%;
+    height: 82%;
     border-radius: 15px;
     color: #fff;
     padding: 40px;
+    z-index: 2;
  }
 
  .box-info h3{
