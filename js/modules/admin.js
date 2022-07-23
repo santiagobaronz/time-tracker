@@ -1,6 +1,9 @@
 const profileBox = document.querySelector(".profile-info");
 let adminButton;
 
+/**
+ * It creates a button, appends it to the profileBox div, and adds an event listener to it.
+ */
 export const adminDisplay = () => {
 
     let button = document.createElement("button");
@@ -15,6 +18,9 @@ export const adminDisplay = () => {
 
 }
 
+/**
+ * It removes the admin button from the DOM.
+ */
 export const closeSessionAdmin = () => {
 
     let elementToDelete = document.querySelector("#adminButton");

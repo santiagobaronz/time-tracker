@@ -82,6 +82,8 @@ const init = async (user) => {
         infoCardSocialSeconday.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
         infoCardSelfCareSeconday.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
 
+        /* Checking if the user is an admin or not. If the user is an admin, it will call the
+        adminDisplay function. */
         if(userData.userRole === "admin"){
             adminDisplay();
         }
