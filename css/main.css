@@ -64,9 +64,8 @@ body{
     margin-right: 5px;
 }
 
-#authentication-box a{
+#authentication-box p{
     color: #fff;
-    
 }
 
 #authentication-box a:hover{
@@ -391,4 +390,25 @@ body{
 
  .report-last-week{
     color: hsl(236, 100%, 87%);
+ }
+
+ /* Admin module */
+
+ #adminButton{
+   position: absolute;
+   right: 30px;
+   top: 65px;
+   padding: 15px 30px;
+   border-radius: 15px;
+   background-color: #1d204b6d;
+   color: #fff;
+   font-weight: 500;
+   font-size: 16px;
+   cursor: pointer;
+   transition: 0.2s all ;
+ }
+
+ #adminButton:hover{
+   background-color: #1d204b9e;
+   transition: 0.2s all;
  }

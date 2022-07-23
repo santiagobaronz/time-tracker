@@ -1,6 +1,7 @@
 /* Importing the functions from the firebase.js file. */
-import { login, logout, auth, getData } from './modules/firebase.js'
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js"
+import { login, logout, auth, getData } from './modules/firebase.js';
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+import { adminDisplay } from './modules/admin.js';
 
 /* Selecting the elements from the HTML file. */
 const app = document.querySelector("#app");
@@ -81,7 +82,11 @@ const init = async (user) => {
         infoCardSocialSeconday.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
         infoCardSelfCareSeconday.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
 
-    },1000)
+        if(userData.userRole === "admin"){
+            adminDisplay();
+        }
+
+    },1500)
     
 }
 

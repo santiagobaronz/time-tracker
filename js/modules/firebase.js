@@ -3,6 +3,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase
 import { getAuth, signInWithPopup, GoogleAuthProvider, signOut} from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
 import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
 import { FIREBASE_API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from "./variables.js";
+import { closeSessionAdmin } from "./admin.js";
 
 /* The configuration of the firebase project. */
 const firebaseConfig = {
@@ -44,6 +45,7 @@ export async function login() {
  */
 export function logout(){
     signOut(auth).then(() => {
+        closeSessionAdmin();
     })
 }
 
@@ -63,6 +65,7 @@ export async function saveProfile(uid, username, email, photoURL) {
             username: username,
             email: email,
             photoURL: photoURL,
+            userRole: "user",
             work: {
                 dailyTime: 0,
                 weeklyTime: 0,
