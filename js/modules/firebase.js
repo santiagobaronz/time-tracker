@@ -1,6 +1,6 @@
 /* Importing the firebase libraries. */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, signOut} from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
 import { getFirestore, collection, addDoc, query, where, getDocs } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-firestore.js";
 import { FIREBASE_API_KEY, AUTH_DOMAIN, PROJECT_ID, STORAGE_BUCKET, MESSAGING_SENDER_ID, APP_ID } from "./variables.js";
 
@@ -9,12 +9,12 @@ import { closeSessionAdmin } from "./admin.js";
 
 /* The configuration of the firebase project. */
 const firebaseConfig = {
-  apiKey: FIREBASE_API_KEY,
-  authDomain: AUTH_DOMAIN,
-  projectId: PROJECT_ID,
-  storageBucket: STORAGE_BUCKET,
-  messagingSenderId: MESSAGING_SENDER_ID,
-  appId: APP_ID
+    apiKey: FIREBASE_API_KEY,
+    authDomain: AUTH_DOMAIN,
+    projectId: PROJECT_ID,
+    storageBucket: STORAGE_BUCKET,
+    messagingSenderId: MESSAGING_SENDER_ID,
+    appId: APP_ID
 };
 
 /* Initializing the firebase app and getting the firestore database. */
@@ -33,10 +33,10 @@ auth.languageCode = 'es';
  */
 export async function login() {
     try {
-        const result = await signInWithPopup(auth,provider);
+        const result = await signInWithPopup(auth, provider);
         const user = result.user;
-        return await getData(user);
-        
+        return await getUserData(user);
+
     } catch (e) {
         console.error(e);
     }
@@ -45,7 +45,7 @@ export async function login() {
 /**
  * It's a function that logs out the user from the app
  */
-export function logout(){
+export function logout() {
     signOut(auth).then(() => {
         closeSessionAdmin();
     })
@@ -61,6 +61,9 @@ export function logout(){
  * @param photoURL -
  */
 export async function saveProfile(uid, username, email, photoURL) {
+
+    let date = new Date().toLocaleDateString();
+
     try {
         const docRef = await addDoc(collection(db, "users"), {
             uid: uid,
@@ -68,6 +71,7 @@ export async function saveProfile(uid, username, email, photoURL) {
             email: email,
             photoURL: photoURL,
             userRole: "user",
+            creationDate: date,
             work: {
                 dailyTime: 0,
                 weeklyTime: 0,
@@ -109,21 +113,31 @@ export async function saveProfile(uid, username, email, photoURL) {
  * @param user - The user object returned from the Firebase authentication.
  * @returns The user object.
  */
-export async function getData(user){
+export async function getUserData(user) {
 
-    const q = query(collection(db,"users"), where("uid", "==", user.uid));
+    const responseDB = query(collection(db, "users"), where("uid", "==", user.uid));
 
     let results = [];
 
-    const querySnapshot = await getDocs(q);
+    const querySnapshot = await getDocs(responseDB);
     querySnapshot.forEach(doc => {
         results.push(doc.data());
     });
 
-    if(results.length == 0){
+    if (results.length == 0) {
         saveProfile(user.uid, user.displayName, user.email, user.photoURL);
         return user;
-    }else{
+    } else {
         return results[0];
     }
+}
+
+export async function getUsersList(){
+
+    let users = [];
+    const results = await getDocs(collection(db, "users"));
+    results.forEach((doc) => {
+        users.push(doc.data());
+    });
+    return users;
 }

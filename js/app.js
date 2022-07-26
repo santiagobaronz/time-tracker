@@ -1,7 +1,7 @@
 /* Importing the functions from the firebase.js file. */
-import { login, logout, auth, getData } from './modules/firebase.js';
+import { login, logout, auth, getUserData } from './modules/firebase.js';
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
-import { adminDisplay } from './modules/admin.js';
+import { adminOptions } from './modules/admin.js';
 
 /* Selecting the elements from the HTML file. */
 const app = document.querySelector("#app");
@@ -59,7 +59,7 @@ let userData;
 const init = async (user) => {
 
     setTimeout( async function obtenerData() {
-        userData = await getData(user);
+        userData = await getUserData(user);
         
         authPage.classList.remove("changePage")
         authPage.classList.add("hidden")
@@ -85,7 +85,7 @@ const init = async (user) => {
         /* Checking if the user is an admin or not. If the user is an admin, it will call the
         adminDisplay function. */
         if(userData.userRole === "admin"){
-            adminDisplay();
+            adminOptions();
         }
 
     },1500)
