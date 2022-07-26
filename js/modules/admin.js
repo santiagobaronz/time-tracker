@@ -92,8 +92,8 @@ const adminPanel = async () => {
             <td>${user.email}</td>
             <td>${userRole}</td>
             <td>${user.creationDate} </td>
-            <td><button>Editar</button></td>
-            <td><button>Eliminar</button></td>
+            <td><button id='editButton' style='--bg: #fff'>Editar</button></td>
+            <td><button id='deleteButton' style='--bg: #fc315a'>Eliminar</button></td>
         `
         userList.append(userDataObject);
 
