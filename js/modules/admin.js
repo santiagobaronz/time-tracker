@@ -21,18 +21,9 @@ export const adminOptions = () => {
     adminPanelInfo.style.display = "none";
 
     adminPanelInfo.innerHTML = `
-        <div id = 'panelTitle'>
+        <div id = 'panelSection'>
             <h2>Bienvenido al panel de administración</h2>
-            <table id='userList'>
-                <tr>
-                    <th>Nombre de usuario</th>
-                    <th>Correo electronico</th>
-                    <th>Tipo de usuario</th>
-                    <th>Fecha de creación</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-            </table>
+            <div id='userCards'></div>
         </div>
     `
 
@@ -70,13 +61,24 @@ const statsPanel = () => {
 
 }
 
+const cleanResults = () => {
+    const userCards = document.querySelectorAll("#user-card");
+    if(userCards.length != 0){
+        userCards.forEach(card => {
+            card.remove();
+        });
+    }
+}
+
 const adminPanel = async () => {
+
+    await cleanResults();
 
     profileStats.style.display = "none";
     adminPanelBox.style.display = "block";
     adminButton.innerHTML = "Estadísticas";
     
-    const userList = document.querySelector("#userList");
+    const userList = document.querySelector("#userCards");
     const usersArray = await getUsersList();
 
     usersArray.forEach(user => {
@@ -84,16 +86,17 @@ const adminPanel = async () => {
         let userRole;
         (user.userRole == "admin") ? userRole = "Administrador" : userRole = "Usuario";
 
-        const userDataObject = document.createElement("tr");
-        userDataObject.id = "user-item";
+        const userDataObject = document.createElement("div");
+        userDataObject.id = "user-card";
         userDataObject.innerHTML = `
 
-            <td>${user.username}</td>
-            <td>${user.email}</td>
-            <td>${userRole}</td>
-            <td>${user.creationDate} </td>
-            <td><button id='editButton' style='--bg: #fff'>Editar</button></td>
-            <td><button id='deleteButton' style='--bg: #fc315a'>Eliminar</button></td>
+            <img src='${user.photoURL}' onerror="this.src='assets/default-image.png'">
+            <p id='userRole'>${userRole}</p>
+            <h3>${user.username}</h3>
+            <p id='userEmail'>Email: ${user.email}</p>
+            <p id='userDate'>Fecha de creación: ${user.creationDate} </p>
+            <button id='editButton' style='--bg: #fff; --b_hover: #BFBFBF'>Editar</button>
+            <button id='deleteButton' style='--bg: #9032bb; --b_hover: #a63bd8 '>Eliminar</button>
         `
         userList.append(userDataObject);
 
