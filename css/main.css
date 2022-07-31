@@ -540,3 +540,39 @@ body::-webkit-scrollbar-thumb{
 	color: #fff !important;
 }
 
+#filterForm{
+	display: grid;
+	grid-template-columns: 1.5fr 1fr;
+	position: relative;
+}
+
+#filterInput{
+	width: 100%;
+	height: 50%;
+	border-radius: 10px;
+	padding: 20px;
+	background-color: #262a6b;
+	color: rgb(214, 214, 214);
+	position: relative;
+	font-size: 14px;
+}
+
+#filterInput::placeholder{
+	color: rgb(214, 214, 214);
+	font-weight: 400;
+}
+
+#filterButton{
+	position: absolute;
+	background-color: transparent;
+	right: 15px;
+	top: 10px;
+	cursor: pointer;
+	padding-left: 20px;
+}
+
+#filterButton img{
+	width: 20px;
+	height: 20px;
+}
+

@@ -22,7 +22,13 @@ export const adminOptions = () => {
 
     adminPanelInfo.innerHTML = `
         <div id = 'panelSection'>
-            <h2>Bienvenido al panel de administración</h2>
+            <form id='filterForm'>
+                <h2>Bienvenido al panel de administración</h2>
+                <div>
+                <input type='text' id='filterInput' placeholder='Nombre de usuario para filtrar...'>
+                <button id='filterButton'><img src='assets/lupa.png'></button>
+                </div>
+            </form>
             <div id='userCards'></div>
         </div>
     `
