@@ -23,12 +23,12 @@ const infoCardExercise = document.querySelector("#exerciseCard");
 const infoCardSocial = document.querySelector("#socialCard");
 const infoCardSelfCare = document.querySelector("#selfCareCard");
 
-const infoCardWorkSeconday = document.querySelector("#workCardSecondary");
-const infoCardPlaySeconday = document.querySelector("#playCardSecondary");
-const infoCardStudySeconday = document.querySelector("#studyCardSecondary");
-const infoCardExerciseSeconday = document.querySelector("#exerciseCardSecondary");
-const infoCardSocialSeconday = document.querySelector("#socialCardSecondary");
-const infoCardSelfCareSeconday = document.querySelector("#selfCareCardSecondary");
+const infoCardWorkSecondary = document.querySelector("#workCardSecondary");
+const infoCardPlaySecondary = document.querySelector("#playCardSecondary");
+const infoCardStudySecondary = document.querySelector("#studyCardSecondary");
+const infoCardExerciseSecondary = document.querySelector("#exerciseCardSecondary");
+const infoCardSocialSecondary = document.querySelector("#socialCardSecondary");
+const infoCardSelfCareSecondary = document.querySelector("#selfCareCardSecondary");
 
 /* Declaring a variable called currentUser. */
 let currentUser;
@@ -75,12 +75,12 @@ const init = async (user) => {
         infoCardSocial.innerHTML = userData.social.dailyTime + "hrs";
         infoCardSelfCare.innerHTML = userData.selfCare.dailyTime + "hrs";
 
-        infoCardWorkSeconday.innerHTML = `Última semana - ${userData.work.weeklyTime}hrs`;
-        infoCardPlaySeconday.innerHTML = `Última semana - ${userData.play.weeklyTime}hrs`;
-        infoCardStudySeconday.innerHTML = `Última semana - ${userData.study.weeklyTime}hrs`;
-        infoCardExerciseSeconday.innerHTML = `Última semana - ${userData.exercise.weeklyTime}hrs`;
-        infoCardSocialSeconday.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
-        infoCardSelfCareSeconday.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
+        infoCardWorkSecondary.innerHTML = `Última semana - ${userData.work.weeklyTime}hrs`;
+        infoCardPlaySecondary.innerHTML = `Última semana - ${userData.play.weeklyTime}hrs`;
+        infoCardStudySecondary.innerHTML = `Última semana - ${userData.study.weeklyTime}hrs`;
+        infoCardExerciseSecondary.innerHTML = `Última semana - ${userData.exercise.weeklyTime}hrs`;
+        infoCardSocialSecondary.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
+        infoCardSelfCareSecondary.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
 
         /* Checking if the user is an admin or not. If the user is an admin, it will call the
         adminDisplay function. */
@@ -131,12 +131,12 @@ dailyButton.addEventListener("click", () => {
     infoCardSocial.innerHTML = userData.social.dailyTime + "hrs";
     infoCardSelfCare.innerHTML = userData.selfCare.dailyTime + "hrs";
 
-    infoCardWorkSeconday.innerHTML = `Última semana - ${userData.work.weeklyTime}hrs`;
-    infoCardPlaySeconday.innerHTML = `Última semana - ${userData.play.weeklyTime}hrs`;
-    infoCardStudySeconday.innerHTML = `Última semana - ${userData.study.weeklyTime}hrs`;
-    infoCardExerciseSeconday.innerHTML = `Última semana - ${userData.exercise.weeklyTime}hrs`;
-    infoCardSocialSeconday.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
-    infoCardSelfCareSeconday.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
+    infoCardWorkSecondary.innerHTML = `Última semana - ${userData.work.weeklyTime}hrs`;
+    infoCardPlaySecondary.innerHTML = `Última semana - ${userData.play.weeklyTime}hrs`;
+    infoCardStudySecondary.innerHTML = `Última semana - ${userData.study.weeklyTime}hrs`;
+    infoCardExerciseSecondary.innerHTML = `Última semana - ${userData.exercise.weeklyTime}hrs`;
+    infoCardSocialSecondary.innerHTML = `Última semana - ${userData.social.weeklyTime}hrs`;
+    infoCardSelfCareSecondary.innerHTML = `Última semana - ${userData.selfCare.weeklyTime} hrs`;
 })
 
 /* Listening for a click event on the weeklyButton element, and when it is clicked, it will call the
@@ -152,12 +152,12 @@ weeklyButton.addEventListener("click", () => {
     infoCardSocial.innerHTML = userData.social.weeklyTime + "hrs";
     infoCardSelfCare.innerHTML = userData.selfCare.weeklyTime + "hrs";
 
-    infoCardWorkSeconday.innerHTML = `Último mes - ${userData.work.monthlyTime}hrs`;
-    infoCardPlaySeconday.innerHTML = `Último mes - ${userData.play.monthlyTime}hrs`;
-    infoCardStudySeconday.innerHTML = `Último mes - ${userData.study.monthlyTime}hrs`;
-    infoCardExerciseSeconday.innerHTML = `Último mes - ${userData.exercise.monthlyTime}hrs`;
-    infoCardSocialSeconday.innerHTML = `Último mes - ${userData.social.monthlyTime}hrs`;
-    infoCardSelfCareSeconday.innerHTML = `Último mes - ${userData.selfCare.monthlyTime} hrs`;
+    infoCardWorkSecondary.innerHTML = `Último mes - ${userData.work.monthlyTime}hrs`;
+    infoCardPlaySecondary.innerHTML = `Último mes - ${userData.play.monthlyTime}hrs`;
+    infoCardStudySecondary.innerHTML = `Último mes - ${userData.study.monthlyTime}hrs`;
+    infoCardExerciseSecondary.innerHTML = `Último mes - ${userData.exercise.monthlyTime}hrs`;
+    infoCardSocialSecondary.innerHTML = `Último mes - ${userData.social.monthlyTime}hrs`;
+    infoCardSelfCareSecondary.innerHTML = `Último mes - ${userData.selfCare.monthlyTime} hrs`;
 })
 
 /* Listening for a click event on the monthlyButton element, and when it is clicked, it will call the
@@ -173,12 +173,12 @@ monthlyButton.addEventListener("click", () => {
     infoCardSocial.innerHTML = userData.social.monthlyTime + "hrs";
     infoCardSelfCare.innerHTML = userData.selfCare.monthlyTime + "hrs";
 
-    infoCardWorkSeconday.innerHTML = `Hoy - ${userData.work.dailyTime}hrs`;
-    infoCardPlaySeconday.innerHTML = `Hoy - ${userData.play.dailyTime}hrs`;
-    infoCardStudySeconday.innerHTML = `Hoy - ${userData.study.dailyTime}hrs`;
-    infoCardExerciseSeconday.innerHTML = `Hoy - ${userData.exercise.dailyTime}hrs`;
-    infoCardSocialSeconday.innerHTML = `Hoy - ${userData.social.dailyTime}hrs`;
-    infoCardSelfCareSeconday.innerHTML = `Hoy - ${userData.selfCare.dailyTime} hrs`;
+    infoCardWorkSecondary.innerHTML = `Hoy - ${userData.work.dailyTime}hrs`;
+    infoCardPlaySecondary.innerHTML = `Hoy - ${userData.play.dailyTime}hrs`;
+    infoCardStudySecondary.innerHTML = `Hoy - ${userData.study.dailyTime}hrs`;
+    infoCardExerciseSecondary.innerHTML = `Hoy - ${userData.exercise.dailyTime}hrs`;
+    infoCardSocialSecondary.innerHTML = `Hoy - ${userData.social.dailyTime}hrs`;
+    infoCardSelfCareSecondary.innerHTML = `Hoy - ${userData.selfCare.dailyTime} hrs`;
 })
 
 /**

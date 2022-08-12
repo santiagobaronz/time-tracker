@@ -485,6 +485,7 @@ body::-webkit-scrollbar-thumb{
 
 #userRole{
 	color: hsl(236, 100%, 87%);
+	margin-bottom: 5px;
 }
 
 #user-card img{
@@ -516,6 +517,7 @@ body::-webkit-scrollbar-thumb{
 #editButton{
 	float: left;
 	margin-right: 15px;
+	color: #fff;
 }
 
 #editButton, #deleteButton{
@@ -524,7 +526,6 @@ body::-webkit-scrollbar-thumb{
 	height: 40px;
 	border-radius: 5px;
 	background-color: var(--bg);
-	color: #000;
 	cursor: pointer;
 	text-align: center;
 	font-size: 15px;
@@ -555,6 +556,7 @@ body::-webkit-scrollbar-thumb{
 	color: rgb(214, 214, 214);
 	position: relative;
 	font-size: 14px;
+	margin-top: -7px;
 }
 
 #filterInput::placeholder{
@@ -566,7 +568,7 @@ body::-webkit-scrollbar-thumb{
 	position: absolute;
 	background-color: transparent;
 	right: 15px;
-	top: 10px;
+	top: 2px;
 	cursor: pointer;
 	padding-left: 20px;
 }

@@ -132,8 +132,11 @@ export async function getUserData(user) {
     }
 }
 
+/**
+ * Get all the documents from the users collection and return them as an array of objects.
+ * @returns An array of objects.
+ */
 export async function getUsersList(){
-
     let users = [];
     const results = await getDocs(collection(db, "users"));
     results.forEach((doc) => {
